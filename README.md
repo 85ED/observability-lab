@@ -1,19 +1,13 @@
 # Observability Lab (Spring Boot)
 
-Projeto de estudo para treinar **observabilidade em aplicações Spring Boot**.
+Projeto simples de estudo para treinar **observabilidade com Spring Boot**.
 
-A ideia desse projeto é aprender, na prática, como funciona:
-- métricas
-- health check
-- tracing
-- erros em runtime
-- leitura da aplicação via HTTP
-
-Tudo feito passo a passo, sem pular etapas.
+A ideia é entender, na prática, como a aplicação pode ser observada enquanto está rodando,
+usando métricas, health check e tracing via HTTP.
 
 ---
 
-## Tecnologias usadas
+## Tecnologias
 
 - Java 17
 - Spring Boot 3.x
@@ -21,60 +15,51 @@ Tudo feito passo a passo, sem pular etapas.
 - Spring Boot Actuator
 - Micrometer
 - Prometheus (exposição de métricas)
-- Zipkin (tracing distribuído)
-- Docker (para rodar o Zipkin)
+- Zipkin (tracing)
+- Docker
 
 ---
 
-## O que já funciona
+## O que funciona hoje
 
 - Aplicação Spring Boot rodando
-- Endpoint de health:
-/actuator/health
-
-diff
-Copiar código
-- Lista de métricas disponíveis:
-/actuator/metrics
-
-diff
-Copiar código
-- Métricas expostas para Prometheus:
-/actuator/prometheus
-
-yaml
-Copiar código
+- Health check via:
+  - `/actuator/health`
+- Lista de métricas:
+  - `/actuator/metrics`
+- Métricas para Prometheus:
+  - `/actuator/prometheus`
 - Métricas customizadas criadas manualmente
-- Endpoint de teste que gera erro proposital para estudo
-- Tracing configurado (Zipkin)
+- Endpoint de teste que gera erro proposital
+- Tracing configurado com Zipkin
 
 ---
 
-## Objetivo do projeto
+## Objetivo
 
-Projeto **apenas para aprendizado**.
+Projeto **somente para aprendizado**.
 
 Serve para:
-- entender como o Spring coleta métricas automaticamente
-- entender como criar métricas customizadas
-- visualizar tempo de resposta, quantidade de chamadas e erros
-- aprender observabilidade sem framework mágico
+- entender métricas automáticas do Spring
+- criar métricas customizadas
+- observar tempo de resposta, quantidade de chamadas e erros
+- aprender observabilidade sem pular etapas
 
 ---
 
-## Observação importante
+## Observação
 
-Esse projeto foi construído **bem devagar**, corrigindo erros no caminho,
-para realmente entender o que está acontecendo por trás do Spring.
+Projeto feito passo a passo, corrigindo erros no caminho,
+para realmente entender o funcionamento interno do Spring.
 
 Não é projeto de produção.
 É um laboratório de estudo.
 
 ---
 
-## Próximos passos (ideias)
+## Próximos passos
 
 - Integrar Prometheus de verdade
-- Criar dashboard no Grafana
+- Criar dashboards no Grafana
 - Melhorar logs com traceId
-- Simular cenário real de produção
+- Simular cenários reais de produção
